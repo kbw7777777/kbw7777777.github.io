@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>길동 ♥ 영희 결혼합니다</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #FAFAF8;
+            --color-text: #3A3A3A;
+            --color-text-light: #8A8A8A;
+            --color-accent: #C9A96E;
+            --color-accent-light: #E8D5B0;
+            --color-line: #E0DDD6;
+            --font-serif: 'Noto Serif KR', 'Cormorant Garamond', serif;
+        }
+
+        body {
+            font-family: var(--font-serif);
+            background: var(--color-bg);
+            color: var(--color-text);
+            max-width: 480px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            max-height: 900px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #f5f0eb 0%, #ece6df 100%);
+            z-index: 0;
+        }
+
+        .hero-photo-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .hero-photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-photo-placeholder .placeholder {
+            width: 240px;
+            height: 320px;
+            border: 2px dashed var(--color-accent-light);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 14px;
+            gap: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .placeholder-icon {
+            font-size: 32px;
+            opacity: 0.5;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(250,250,248,0) 0%,
+                rgba(250,250,248,0.1) 50%,
+                rgba(250,250,248,0.85) 85%,
+                rgba(250,250,248,1) 100%
+            );
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            margin-top: auto;
+            padding-bottom: 60px;
+        }
+
+        .hero-date-top {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            letter-spacing: 4px;
+            color: var(--color-text-light);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-names {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 6px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .hero-names .ampersand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--color-accent);
+            display: block;
+            margin: 4px 0;
+        }
+
+        .hero-info {
+            font-size: 13px;
+            color: var(--color-text-light);
+            letter-spacing: 1px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            animation: bounce 2s ease infinite;
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: var(--color-accent-light);
+            margin: 0 auto;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 80px 32px;
+        }
+
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            text-align: center;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: var(--color-accent);
+            margin: 0 auto 40px;
+        }
+
+        /* ===== GREETING ===== */
+        .greeting {
+            background: white;
+        }
+
+        .greeting-text {
+            font-size: 15px;
+            line-height: 2.2;
+            text-align: center;
+            font-weight: 300;
+            color: var(--color-text);
+            word-break: keep-all;
+        }
+
+        .greeting-parents {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 2;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .greeting-parents .parent-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .greeting-parents .dot {
+            color: var(--color-accent);
+        }
+
+        /* ===== CALENDAR ===== */
+        .calendar-section {
+            background: var(--color-bg);
+        }
+
+        .calendar {
+            max-width: 320px;
+            margin: 0 auto 40px;
+        }
+
+        .calendar-month {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--color-text-light);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .calendar-grid .day-header {
+            font-size: 11px;
+            color: var(--color-text-light);
+            padding: 8px 0;
+            letter-spacing: 1px;
+        }
+
+        .calendar-grid .day-header:first-child {
+            color: #C4756E;
+        }
+
+        .calendar-grid .day {
+            padding: 8px 0;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .calendar-grid .day.sunday {
+            color: #C4756E;
+        }
+
+        .calendar-grid .day.highlight {
+            background: var(--color-accent);
+            color: white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .calendar-grid .day.empty {
+            visibility: hidden;
+        }
+
+        .calendar-detail {
+            text-align: center;
+            font-size: 15px;
+            line-height: 2;
+            color: var(--color-text);
+            font-weight: 300;
+        }
+
+        .calendar-detail .time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+        }
+
+        .dday-counter {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 13px;
+            color: var(--color-text-light);
+            letter-spacing: 1px;
+        }
+
+        .dday-counter .count {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            color: var(--color-accent);
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-section {
+            background: white;
+            padding-bottom: 60px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item:first-child {
+            grid-column: 1 / -1;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .placeholder {
+            width: 100%;
+            height: 100%;
+            background: #f0ede8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 13px;
+            gap: 6px;
+        }
+
+        /* ===== LOCATION ===== */
+        .location-section {
+            background: var(--color-bg);
+        }
+
+        .location-name {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .location-address {
+            text-align: center;
+            font-size: 13px;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 240px;
+            background: #eae7e0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 13px;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .transport-info {
+            font-size: 13px;
+            line-height: 2;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .transport-info dt {
+            font-weight: 400;
+            color: var(--color-text);
+            margin-top: 16px;
+        }
+
+        .transport-info dt:first-child {
+            margin-top: 0;
+        }
+
+        .map-buttons {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        .map-btn {
+            padding: 10px 20px;
+            border: 1px solid var(--color-line);
+            background: white;
+            border-radius: 24px;
+            font-family: var(--font-serif);
+            font-size: 12px;
+            color: var(--color-text);
+            cursor: pointer;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .map-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* ===== ACCOUNT ===== */
+        .account-section {
+            background: white;
+        }
+
+        .account-group {
+            margin-bottom: 32px;
+        }
+
+        .account-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .account-label {
+            text-align: center;
+            font-size: 14px;
+            color: var(--color-text);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .account-toggle {
+            display: flex;
+            justify-content: center;
+        }
+
+        .account-toggle button {
+            background: none;
+            border: 1px solid var(--color-line);
+            padding: 10px 28px;
+            border-radius: 24px;
+            font-family: var(--font-serif);
+            font-size: 13px;
+            color: var(--color-text-light);
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .account-toggle button:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .account-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, margin 0.4s ease;
+        }
+
+        .account-details.open {
+            max-height: 300px;
+            margin-top: 16px;
+        }
+
+        .account-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: var(--color-bg);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .account-item .bank {
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        .account-item .number {
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-btn {
+            background: none;
+            border: 1px solid var(--color-line);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            color: var(--color-text-light);
+            cursor: pointer;
+            font-family: var(--font-serif);
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* ===== RSVP ===== */
+        .rsvp-section {
+            background: var(--color-bg);
+            text-align: center;
+        }
+
+        .rsvp-text {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 2;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--color-text);
+        }
+
+        .contact-btn .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--color-line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .contact-btn:hover .icon-circle {
+            border-color: var(--color-accent);
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .contact-btn .label {
+            font-size: 11px;
+            color: var(--color-text-light);
+            letter-spacing: 1px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 40px 32px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--color-text-light);
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
+
+        .footer .heart {
+            color: var(--color-accent);
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== ANIMATION ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--color-text);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-family: var(--font-serif);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 200;
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- GREETING (최상단) -->
+    <section class="greeting" style="padding-top: 100px;">
+        <div class="section-label">Invitation</div>
+        <h2 class="section-title">초대의 글</h2>
+        <div class="divider"></div>
+        <p class="greeting-text">
+            늘 곁에서 아끼고 사랑하며 키운<br>
+            저희 아들이 좋은 사람을 만나<br>
+            새로운 가정을 이루게 되었습니다.<br><br>
+            바쁘시더라도 부디 오셔서<br>
+            두 사람의 앞날을<br>
+            축복해 주시면 감사하겠습니다.
+        </p>
+        <div class="greeting-parents">
+            <div class="parent-row">
+                홍판서 <span class="dot">&middot;</span> 박순이 <span style="font-size:12px; color:var(--color-accent)">의 아들</span> 길동
+            </div>
+            <div class="parent-row">
+                김대감 <span class="dot">&middot;</span> 이미자 <span style="font-size:12px; color:var(--color-accent)">의 딸</span> 영희
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-photo-placeholder">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=480&h=720&fit=crop&q=80" alt="메인 사진">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-date-top">2026. 05. 16</div>
+            <div class="hero-names">
+                홍길동
+                <span class="ampersand">&amp;</span>
+                김영희
+            </div>
+            <div class="hero-info">
+                2026년 5월 16일 토요일 오후 1시<br>
+                그랜드워커힐 호텔 아스토리아
+            </div>
+        </div>
+        <div class="scroll-indicator"><span></span></div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="calendar-section">
+        <div class="section-label fade-in">Calendar</div>
+        <h2 class="section-title fade-in">2026. 05. 16</h2>
+        <div class="divider fade-in"></div>
+
+        <div class="calendar fade-in">
+            <div class="calendar-month">May 2026</div>
+            <div class="calendar-grid">
+                <div class="day-header">SUN</div>
+                <div class="day-header">MON</div>
+                <div class="day-header">TUE</div>
+                <div class="day-header">WED</div>
+                <div class="day-header">THU</div>
+                <div class="day-header">FRI</div>
+                <div class="day-header">SAT</div>
+
+                <!-- May 2026: starts on Friday -->
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+
+                <div class="day sunday">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+
+                <div class="day sunday">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day highlight">16</div>
+
+                <div class="day sunday">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+
+                <div class="day sunday">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+
+                <div class="day sunday">31</div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+            </div>
+        </div>
+
+        <div class="calendar-detail fade-in">
+            2026년 5월 16일 토요일<br>
+            <span class="time">PM 1:00</span>
+        </div>
+
+        <div class="dday-counter fade-in">
+            결혼식까지
+            <span class="count" id="dday"></span>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+        <div class="section-label fade-in">Gallery</div>
+        <h2 class="section-title fade-in">우리의 순간들</h2>
+        <div class="divider fade-in"></div>
+
+        <div class="gallery-grid fade-in">
+            <!-- 사진 1 (큰 사진) -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&h=450&fit=crop&q=80" alt="사진 1">
+            </div>
+            <!-- 사진 2 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&h=400&fit=crop&q=80" alt="사진 2">
+            </div>
+            <!-- 사진 3 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=400&h=400&fit=crop&q=80" alt="사진 3">
+            </div>
+            <!-- 사진 4 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&h=400&fit=crop&q=80" alt="사진 4">
+            </div>
+            <!-- 사진 5 -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&h=400&fit=crop&q=80" alt="사진 5">
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location-section">
+        <div class="section-label fade-in">Location</div>
+        <h2 class="section-title fade-in">오시는 길</h2>
+        <div class="divider fade-in"></div>
+
+        <div class="fade-in">
+            <div class="location-name">그랜드워커힐 호텔 아스토리아</div>
+            <div class="location-address">
+                서울특별시 광진구 워커힐로 177<br>
+                그랜드워커힐 서울 2층 아스토리아
+            </div>
+
+            <div class="map-placeholder">
+                <span class="placeholder-icon">&#128205;</span>
+                <span>지도 영역</span>
+                <span style="font-size:11px; opacity:0.6">카카오맵/네이버맵 API 또는 이미지</span>
+            </div>
+
+            <div class="map-buttons">
+                <a href="https://map.kakao.com/" target="_blank" class="map-btn">카카오맵</a>
+                <a href="https://map.naver.com/" target="_blank" class="map-btn">네이버지도</a>
+                <a href="https://maps.google.com/" target="_blank" class="map-btn">구글맵</a>
+            </div>
+
+            <dl class="transport-info" style="margin-top: 32px;">
+                <dt>지하철</dt>
+                <dd>5호선 광나루역 2번 출구 셔틀버스 10분</dd>
+                <dt>버스</dt>
+                <dd>워커힐호텔 정류장 하차</dd>
+                <dt>주차</dt>
+                <dd>호텔 지하주차장 이용 가능 (3시간 무료)</dd>
+            </dl>
+        </div>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section class="account-section">
+        <div class="section-label fade-in">Gift</div>
+        <h2 class="section-title fade-in">마음 전하실 곳</h2>
+        <div class="divider fade-in"></div>
+
+        <div class="fade-in">
+            <!-- 신랑측 -->
+            <div class="account-group">
+                <div class="account-label">신랑측</div>
+                <div class="account-toggle">
+                    <button onclick="toggleAccount(this)">계좌번호 보기</button>
+                </div>
+                <div class="account-details">
+                    <div class="account-item">
+                        <div>
+                            <span class="bank">국민은행</span>
+                            <span class="number"> 000-0000-0000-00</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyAccount('000-0000-0000-00')">복사</button>
+                    </div>
+                    <div class="account-item">
+                        <div>
+                            <span class="bank">신한은행</span>
+                            <span class="number"> 000-000-000000</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyAccount('000-000-000000')">복사</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 신부측 -->
+            <div class="account-group">
+                <div class="account-label">신부측</div>
+                <div class="account-toggle">
+                    <button onclick="toggleAccount(this)">계좌번호 보기</button>
+                </div>
+                <div class="account-details">
+                    <div class="account-item">
+                        <div>
+                            <span class="bank">우리은행</span>
+                            <span class="number"> 000-0000-0000-00</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyAccount('000-0000-0000-00')">복사</button>
+                    </div>
+                    <div class="account-item">
+                        <div>
+                            <span class="bank">하나은행</span>
+                            <span class="number"> 000-000-000000</span>
+                        </div>
+                        <button class="copy-btn" onclick="copyAccount('000-000-000000')">복사</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp-section">
+        <div class="section-label fade-in">Contact</div>
+        <h2 class="section-title fade-in">연락하기</h2>
+        <div class="divider fade-in"></div>
+
+        <p class="rsvp-text fade-in">
+            축하의 마음을 전해주세요
+        </p>
+
+        <div class="contact-buttons fade-in">
+            <a href="tel:010-0000-0000" class="contact-btn">
+                <div class="icon-circle">&#128222;</div>
+                <span class="label">신랑에게</span>
+            </a>
+            <a href="tel:010-0000-0000" class="contact-btn">
+                <div class="icon-circle">&#128172;</div>
+                <span class="label">신랑측 혼주</span>
+            </a>
+            <a href="tel:010-0000-0000" class="contact-btn">
+                <div class="icon-circle">&#128222;</div>
+                <span class="label">신부에게</span>
+            </a>
+            <a href="tel:010-0000-0000" class="contact-btn">
+                <div class="icon-circle">&#128172;</div>
+                <span class="label">신부측 혼주</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span class="heart">&#9825;</span>
+        길동 &amp; 영희<br>
+        2026. 05. 16
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="close-btn">&times;</div>
+        <img src="" alt="갤러리 사진" id="lightbox-img">
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">계좌번호가 복사되었습니다</div>
+
+    <script>
+        // D-Day Counter
+        (function() {
+            const wedding = new Date('2026-05-16T13:00:00+09:00');
+            const now = new Date();
+            const diff = Math.ceil((wedding - now) / (1000 * 60 * 60 * 24));
+            const el = document.getElementById('dday');
+            if (diff > 0) {
+                el.textContent = 'D-' + diff;
+            } else if (diff === 0) {
+                el.textContent = 'D-Day';
+            } else {
+                el.textContent = '';
+            }
+        })();
+
+        // Scroll Fade-In Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Account Toggle
+        function toggleAccount(btn) {
+            const details = btn.closest('.account-group').querySelector('.account-details');
+            details.classList.toggle('open');
+            btn.textContent = details.classList.contains('open') ? '접기' : '계좌번호 보기';
+        }
+
+        // Copy Account Number
+        function copyAccount(text) {
+            const clean = text.replace(/\s/g, '');
+            navigator.clipboard.writeText(clean).then(() => {
+                showToast('계좌번호가 복사되었습니다');
+            }).catch(() => {
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = clean;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('계좌번호가 복사되었습니다');
+            });
+        }
+
+        // Toast
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        // Lightbox
+        function openLightbox(el) {
+            const img = el.querySelector('img');
+            if (!img) return; // placeholder인 경우 무시
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Kakao Share (placeholder)
+        // 카카오 공유 기능을 사용하려면 카카오 JavaScript SDK를 추가하고
+        // Kakao.init('YOUR_APP_KEY')를 호출한 후 Kakao.Share.sendDefault() 사용
+    </script>
+
+</body>
+</html>
