@@ -1,4 +1,5 @@
 google.com, pub-3899380529930830, DIRECT, f08c47fec0942fa0
+facebook.com, 2467952556970734, DIRECT, c3e20eee3f780d68
 
 OWNERDOMAIN=kbw7777777.github.io
 ironsrc.com, 641957, DIRECT
