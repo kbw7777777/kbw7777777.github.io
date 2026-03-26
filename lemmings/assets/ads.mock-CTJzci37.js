@@ -1,0 +1,1 @@
+async function o(e){console.log("[Mock Ad] 광고 사전 로딩")}async function s({onEvent:e}){console.log("[Mock Ad] 광고 표시"),e({type:"requested"}),e({type:"show"}),setTimeout(()=>{e({type:"userEarnedReward"}),setTimeout(()=>{e({type:"dismissed"})},500)},1e3)}export{o as loadFullScreenAd,s as showFullScreenAd};
