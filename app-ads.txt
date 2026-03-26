@@ -4,6 +4,8 @@ facebook.com, 2467952556970734, DIRECT, c3e20eee3f780d68
 
 OWNERDOMAIN=kbw7777777.github.io
 ironsrc.com, 641957, DIRECT
+ironsrc.com, 651731, DIRECT
+
 blueseasx.com, 203625, RESELLER
 rubiconproject.com, 26132, RESELLER, 0bfd66d529a55807
 pubnative.net, 1009966, RESELLER, d641df8625486a7b
