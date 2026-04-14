@@ -48,52 +48,14 @@
         .hero {
             position: relative;
             width: 100%;
-            height: 100vh;
-            min-height: 600px;
-            max-height: 900px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: var(--color-bg);
             text-align: center;
             overflow: hidden;
         }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, #f5f0eb 0%, #ece6df 100%);
-            z-index: 0;
-        }
-
-        .hero-photo-placeholder {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .hero-photo-placeholder img {
+        .hero-photo {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-photo-placeholder .placeholder {
-            width: 240px;
-            height: 320px;
-            border: 2px dashed var(--color-accent-light);
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-text-light);
-            font-size: 14px;
-            gap: 8px;
-            background: rgba(255,255,255,0.5);
+            display: block;
         }
 
         .placeholder-icon {
@@ -101,82 +63,63 @@
             opacity: 0.5;
         }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                180deg,
-                rgba(250,250,248,0) 0%,
-                rgba(250,250,248,0.1) 50%,
-                rgba(250,250,248,0.85) 85%,
-                rgba(250,250,248,1) 100%
-            );
-            z-index: 2;
-        }
-
         .hero-content {
-            position: relative;
-            z-index: 3;
-            margin-top: auto;
-            padding-bottom: 60px;
+            padding: 36px 32px 48px;
         }
 
         .hero-date-top {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+            font-size: 14px;
             letter-spacing: 4px;
-            color: var(--color-text);
-            margin-bottom: 20px;
-            font-weight: 600;
+            color: var(--color-text-light);
+            margin-bottom: 18px;
+            font-weight: 500;
         }
 
         .hero-names {
-            font-size: 40px;
-            font-weight: 700;
+            font-size: 26px;
+            font-weight: 500;
             letter-spacing: 6px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.7;
+            margin-bottom: 18px;
             color: var(--color-text);
         }
 
         .hero-names .ampersand {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 32px;
+            font-size: 22px;
             font-style: italic;
             color: var(--color-accent);
             display: block;
-            margin: 4px 0;
+            margin: 2px 0;
             font-weight: 500;
         }
 
         .hero-info {
-            font-size: 17px;
+            font-size: 15px;
             color: var(--color-text);
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             line-height: 1.9;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .scroll-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
+            margin: 8px auto 16px;
             animation: bounce 2s ease infinite;
+            width: fit-content;
         }
 
         .scroll-indicator span {
             display: block;
             width: 1px;
-            height: 40px;
+            height: 32px;
             background: var(--color-accent-light);
             margin: 0 auto;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
         }
 
         /* ===== SECTION COMMON ===== */
@@ -754,11 +697,7 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-photo-placeholder">
-            <img src="pic/1.jpg" alt="메인 사진">
-        </div>
-        <div class="hero-overlay"></div>
+        <img class="hero-photo" src="pic/1.jpg" alt="장하일 노태이 웨딩 메인 사진">
         <div class="hero-content">
             <div class="hero-date-top">2026. 06. 06</div>
             <div class="hero-names">
@@ -770,8 +709,8 @@
                 2026년 6월 6일 토요일 오후 3시<br>
                 송도 메리빌리아 웨딩홀 2F 셀레스 메리홀
             </div>
+            <div class="scroll-indicator"><span></span></div>
         </div>
-        <div class="scroll-indicator"><span></span></div>
     </section>
 
     <!-- CALENDAR -->
