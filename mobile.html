@@ -170,30 +170,44 @@
 
         .greeting-parents {
             margin-top: 48px;
-            text-align: center;
             font-size: 17px;
             line-height: 2;
             color: var(--color-text);
             font-weight: 500;
+            display: grid;
+            grid-template-columns: repeat(6, auto);
+            justify-content: center;
+            column-gap: 8px;
+            row-gap: 10px;
+            align-items: center;
         }
 
         .greeting-parents .parent-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
+            display: contents;
         }
 
         .greeting-parents .dot {
             color: var(--color-accent);
         }
 
+        .greeting-parents .relation {
+            font-size: 14px;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .greeting-parents .flower-slot {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 1.2em;
+            min-height: 1.2em;
+        }
+
         .deceased-mark {
             display: inline-block;
-            width: 1.1em;
-            height: 1.1em;
-            vertical-align: -0.2em;
-            margin-right: 2px;
+            width: 1.2em;
+            height: 1.2em;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: crisp-edges;
         }
@@ -697,10 +711,20 @@
         </p>
         <div class="greeting-parents">
             <div class="parent-row">
-                장인근 <span class="dot">&middot;</span> <img class="deceased-mark" src="pic/flower.png" alt="故">이영희 <span style="font-size:14px; color:var(--color-accent); font-weight:500">의 아들</span> 하일
+                <span>장인근</span>
+                <span class="dot">&middot;</span>
+                <span class="flower-slot"><img class="deceased-mark" src="pic/flower.png" alt="故"></span>
+                <span>이영희</span>
+                <span class="relation">의 아들</span>
+                <span>하일</span>
             </div>
             <div class="parent-row">
-                노현탁 <span class="dot">&middot;</span> 이근영 <span style="font-size:14px; color:var(--color-accent); font-weight:500">의 딸</span> 태이
+                <span>노현탁</span>
+                <span class="dot">&middot;</span>
+                <span class="flower-slot"></span>
+                <span>이근영</span>
+                <span class="relation">의 딸</span>
+                <span>태이</span>
             </div>
         </div>
     </section>
